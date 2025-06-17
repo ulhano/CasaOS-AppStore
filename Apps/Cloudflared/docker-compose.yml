@@ -1,4 +1,4 @@
-name: cloudflared
+name: mu-cloudflared
 services:
   cloudflared:
     image: wisdomsky/cloudflared-web:2025.2.1
