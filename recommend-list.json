@@ -1,0 +1,29 @@
+[
+  {
+    "appid": "cloudflared"
+  },
+  {
+    "appid": "memos"
+  },
+  {
+    "appid": "transmission"
+  },
+  {
+    "appid": "jellyfin"
+  },
+  {
+    "appid": "n8n"
+  },
+  {
+    "appid": "swingmusic"
+  },
+  {
+    "appid": "syncthing"
+  },
+  {
+    "appid": "immich"
+  },
+  {
+    "appid": "vocechat"
+  }
+]
