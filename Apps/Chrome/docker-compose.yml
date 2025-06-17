@@ -1,4 +1,4 @@
-name: mu-chrome
+name: muchrome
 services:
   app:
     image: linuxserver/chrome:137.0.7151
