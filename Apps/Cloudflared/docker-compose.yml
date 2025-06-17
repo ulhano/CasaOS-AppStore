@@ -1,7 +1,7 @@
-name: cloudflared
+name: mucloudflared
 services:
   cloudflared:
-    image: wisdomsky/cloudflared-web:2025.2.1
+    image: cloudflare/cloudflared:2025.6.1
     restart: unless-stopped
     network_mode: host
     x-casaos:
