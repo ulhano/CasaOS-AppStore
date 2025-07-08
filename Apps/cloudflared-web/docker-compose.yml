@@ -8,49 +8,14 @@ services:
   cloudflared:
     container_name: cloudflared
 
-    # Image to be used for the container
     # image: wisdomsky/cloudflared-web:2025.6.1
     image: cloudflare/cloudflared:2025.7.0
 
-    # Container restart policy
     restart: unless-stopped
-
     network_mode: host
-
     environment:
-      - WEBUI_PORT=14333
-      - EDGE_IP_VERSION=auto
-      - PROTOCOL=auto
-      - METRICS_ENABLE=false
-      - METRICS_PORT=60123
-      - BASIC_AUTH_USER=admin
-      - BASIC_AUTH_PASS=""
-
-    x-casaos: # CasaOS specific configuration
-      envs:
-        - container: WEBUI_PORT
-          description:
-            en_us: "Web UI Port"
-        - container: EDGE_IP_VERSION
-          description:
-            en_us: "Edge IP Version"
-        - container: PROTOCOL
-          description:
-            en_us: "Protocol"
-        - container: METRICS_ENABLE
-          description:
-            en_us: "Metrics Enable"
-        - container: METRICS_PORT
-          description:
-            en_us: "Metrics Port"
-        - container: BASIC_AUTH_USER
-          description:
-            en_us: "Basic Auth User"
-        - container: BASIC_AUTH_PASS
-      ports:
-        - container: "14333"
-          description:
-            en_us: "Container Port: 14333"
+      - TUNNEL_TOKEN=
+    command: tunnel --no-autoupdate run
 
 # CasaOS specific configuration
 x-casaos:
@@ -79,10 +44,3 @@ x-casaos:
     en_us: Cloudflared
   # Application category
   category: MyCasaOS
-  # Port mapping information
-  port_map: "14333"
-  # Tips
-  tips:
-    before_install:
-      en_us: |
-        Read this before installing: https://community.bigbeartechworld.com/t/added-cloudflared-web-to-bigbearcasaos/2275?u=dragonfire1119
