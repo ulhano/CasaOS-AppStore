@@ -7,27 +7,22 @@ services:
   # Service name: cloudflared
   cloudflared:
     container_name: cloudflared
-
-    # image: wisdomsky/cloudflared-web:2025.6.1
     image: cloudflare/cloudflared:2025.7.0
-
     restart: unless-stopped
     network_mode: host
     environment:
+      # https://hub.docker.com/r/cloudflare/cloudflared
       - TUNNEL_TOKEN=
     command: tunnel --no-autoupdate run
 
 # CasaOS specific configuration
 x-casaos:
-  # Supported CPU architectures for the application
   architectures:
     - amd64
     - arm64
-  # Main service of the application
   main: cloudflared
   description:
-    # Description in English
-    en_us: https://hub.docker.com/r/cloudflare/cloudflared/tags?name=2025. | Cloudflared-web is a docker image that packages both cloudflared cli and a simple Web UI to easily start or stop remotely-managed Cloudflare tunnel.
+    en_us: [Docker Hub](https://hub.docker.com/r/cloudflare/cloudflared/tags?name=2025.) | Cloudflared-web is a docker image that packages both cloudflared cli and a simple Web UI to easily start or stop remotely-managed Cloudflare tunnel.
   tagline:
     # Short description or tagline in English
     en_us: Cloudflared
@@ -35,12 +30,8 @@ x-casaos:
   developer: "ulhano"
   # Author of this configuration
   author: Ulhano
-  # Icon for the application
   icon: https://cdn.jsdelivr.net/gh/selfhst/icons/png/cloudflare.png
-  # Thumbnail image (currently empty)
   thumbnail: ""
   title:
-    # Title in English
     en_us: Cloudflared
-  # Application category
   category: MyCasaOS
