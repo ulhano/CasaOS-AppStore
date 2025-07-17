@@ -21,4 +21,6 @@ https://github.com/analogj/scrutiny/pkgs/container/scrutiny
 necessario testar
 
 ### Frigate NVR
-necessario testar
+https://frigate.video/
+
+https://docs.frigate.video/frigate/installation/#storage

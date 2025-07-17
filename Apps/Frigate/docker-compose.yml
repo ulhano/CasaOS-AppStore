@@ -73,12 +73,18 @@ services:
         source: /DATA/AppData/$AppID/config
         target: /config
       - type: bind
-        source: /DATA/AppData/$AppID/media
-        target: /media/frigate
-#      - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
-#        target: /tmp/cache
-#        tmpfs:
-#          size: 1G
+        source: /DATA/AppData/$AppID/media/clips
+        target: /media/frigate/clips
+      - type: bind
+        source: /DATA/AppData/$AppID/media/recordings
+        target: /media/frigate/recordings
+      - type: bind
+        source: /DATA/AppData/$AppID/media/exports
+        target: /media/frigate/exports
+      - type: tmpfs # Optional: 1GB of memory, reduces SSD/SD Card wear
+        target: /tmp/cache
+        tmpfs:
+          size: 1G
     x-casaos:
       ports:
         - container: "5000"
