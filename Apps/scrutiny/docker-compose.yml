@@ -17,6 +17,12 @@ services:
     # Container restart policy
     restart: unless-stopped
 
+    environment:
+      # "0 0 * * *"   At 12:00 AM (default)
+      # "*/5 * * * *" Every 5 minutes
+      # "0 * * * *" Every hour
+      - COLLECTOR_CRON_SCHEDULE=0 * * * *
+
     # Volumes to be mounted to the container
     volumes:
       # Mount the config directory from the host to the container
