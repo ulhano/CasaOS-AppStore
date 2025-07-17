@@ -58,6 +58,8 @@ services:
       timeout: 10s
       retries: 3
     shm_size: "256mb" # update for your cameras based on calculation
+    environment:
+    - FRIGATE_RTSP_PASSWORD=senhaDasCameras
     devices:
       - /dev/bus/usb:/dev/bus/usb  # passes the USB Coral, needs to be modified for other versions
       - /dev/apex_0:/dev/apex_0  # passes a PCIe Coral, follow driver instructions here https://coral.ai/docs/m2/get-started/#2a-on-linux
