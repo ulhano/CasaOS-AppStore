@@ -109,7 +109,7 @@ x-casaos:
     - arm64
     - arm
   author: mr-manuel
-  category: Surveillance
+  category: MyCasaOS
   description:
     en_us: |
       Use of a Google Coral Accelerator is optional, but highly recommended. The Coral will outperform even the best CPUs and can process 100+ FPS with very little overhead.

@@ -32,3 +32,5 @@ https://docs.frigate.video/frigate/installation/#storage
 [LinuxServer-resilio-sync](https://github.com/WisdomSky/CasaOS-LinuxServer-AppStore/blob/main/Apps/Resilio-sync/docker-compose.yml)
 
 https://hub.docker.com/r/linuxserver/resilio-sync
+
+Obs: quando category: MyCasaOS, fiz alguma modificacao no docker-compose

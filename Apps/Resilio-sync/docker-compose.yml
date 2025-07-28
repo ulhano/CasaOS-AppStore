@@ -2,6 +2,7 @@ name: linuxserver-resilio-sync
 services:
   app:
     image: linuxserver/resilio-sync:3.1.0
+    container_name: resilio-sync
     restart: unless-stopped
     environment:
       PUID: $PUID
@@ -27,13 +28,13 @@ services:
         protocol: tcp
     volumes:
       - type: bind
-        source: /srv/lsio/resilio-sync/config
+        source: /DATA/AppData/$AppID/config
         target: /config
       - type: bind
-        source: /srv/lsio/resilio-sync/downloads
+        source: /DATA/AppData/$AppID/downloads
         target: /downloads
       - type: bind
-        source: /srv/lsio/resilio-sync/sync
+        source: /DATA/AppData/$AppID/sync
         target: /sync
 x-casaos:
   architectures:
@@ -50,6 +51,7 @@ x-casaos:
   author: WisdomSky
   icon: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/resilio-sync-logo.png
   thumbnail: https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/resilio-sync-logo.png
+  port_map: "8888"
   title:
     en_us: Resilio sync
-  category: LinuxServer.io
+  category: MyCasaOS
